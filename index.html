@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button type="button" id="fetchdata">Fetch</button>
+    <p id="result"></p>
+  </body>
+  <script>
+    const fetchDataBtn = document.querySelector("#fetchdata");
+    const result = document.querySelector("#result");
+    const getData = function () {
+      result.innerText = ""is_success": true,
+        "user_id": "john_doe_17091999", “email” : “john@xyz.com”,
+        “roll_number”:”ABCD123”,
+        "odd_numbers": [“1”],
+        "even_numbers": [“334”,”4”],
+        "alphabets": [“A”,”R”]";
+      fetch("http://localost:3000/bfhl")
+        .then((res) => res.json())
+        .then((data) => {
+          result.innerText = JSON.stringify(data, null, 2);
+        })
+        .catch((error) => console.log(error));
+    };
+    fetchDataBtn.addEventListener("click", getData);
+  </script>
+</html>
